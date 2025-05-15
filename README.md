@@ -1,68 +1,58 @@
-# Análisis Predictivo de Ingreso Universitario
+# Predictive Classification Model for UNMSM Admissions
 
-## 📚 Descripción del Proyecto
+## 🧠 Description
+This project is a continuation of an initial analysis on a specific university entrance exam. 
+In this second phase, the goal was to build a predictive and descriptive analysis using historical data from admission processes, 
+applying data collection, processing, and visualization techniques.
 
-Este proyecto es la continuación de un primer análisis sobre un examen de admisión específico. En esta segunda fase, el objetivo fue construir un análisis predictivo y descriptivo basado en datos históricos de procesos de admisión, empleando técnicas de recolección, procesamiento y visualización de datos.
-Además, se desarrolló un **modelo predictivo** que busca anticipar si un postulante logrará ingresar a la universidad, considerando variables como la **carrera** y el **periodo** de postulación.
+In addition, a predictive classification model was developed to estimate whether a candidate will be admitted or not to the university, 
+based on variables such as the academic program (major) and the admission period.
 
----
-
-## ⚙️ Estructura del Proyecto
+## 🧠 Project Structure
 
 - **1. Web Scraping**  
-  Extracción automatizada de datos históricos usando **Python** y **Selenium**.
+  Automated extraction of historical admission data using Python and Selenium.
 
 - **2. Data Wrangling**  
-  Limpieza, transformación e integración de datos sobre:
-  - Modalidad de ingreso
-  - Carrera
-  - Sede
-  - Año y periodo
+  Data cleaning, transformation, and integration focused on:
+  - Admission modality
+  - Academic program (major)
+  - Campus location
+  - Year and admission period
 
-- **3. Análisis Exploratorio**  
-  Preparación de datasets para análisis de tendencias, puntajes, sedes y carreras.
+- **3. Exploratory Data Analysis (EDA)**  
+  Dataset preparation for analyzing trends, scores, campuses, and academic programs.
 
-- **4. Visualización en Power BI**  
-  Construcción de dashboards interactivos para analizar:
-  - Distribución de puntajes
-  - Evolución de postulantes e ingresantes
-  - Comparativa de carreras y sedes
-  - Nuevas carreras aperturadas
+- **4. Power BI Visualization**  
+  Interactive dashboards built to explore:
+  - Score distributions
+  - Trends in applicants and admitted students
+  - Comparisons by academic program and campus
+  - Newly launched academic programs
 
----
+## 🧠 Key Findings
 
-## 📊 Hallazgos Importantes
+- New programs launched in 2025-II:
+  - Forensic Criminology
+  - Mechatronics Engineering
+  - Nuclear Engineering
+  - Maritime and Port Administration
+  - Water Engineering and Treatment Technologies
 
-- **Nuevas carreras creadas en 2025-II**:
-  - Criminalística Forense
-  - Ingeniería Mecatrónica
-  - Ingeniería Nuclear
-  - Administración Marítima y Portuaria
-  - Ingeniería del Agua y Tecnologías de Tratamiento
+- Lima is the campus with the highest number of applicants.
+- **Human Medicine** remains the most in-demand program.
+- **Drop in average scores** across many programs, partly due to the acceptance of candidates below the minimum score threshold of 900.
+- **Programs with the highest number of available spots**:
+  1. Law
+  2. Accounting
+  3. Business Administration
+  4. Industrial Engineering
+  5. Human Medicine
 
-- **Lima** es la sede con mayor número de postulantes.
+- Programs with the highest average scores in the latest exam (2025-II):
+  1. Systems Engineering
+  2. Biomedical Engineering
 
-- **Medicina Humana** sigue siendo la carrera más demandada.
-
-- **Disminución de puntajes promedio** en muchas carreras, explicado en parte por la aceptación de postulantes que no alcanzaron el puntaje mínimo de 900.
-
-- **Carreras con mayor cantidad de vacantes**:
-  1. Derecho
-  2. Contabilidad
-  3. Administración
-  4. Ingeniería Industrial
-  5. Medicina Humana
-
-- **Carreras con mejor puntaje promedio en el último examen (2025-II)**:
-  1. Ingeniería de Sistemas
-  2. Ingeniería Biomédica
-
----
-
-## 🚀 Tecnologías Utilizadas
-
+## 🧠 Technologies Used
 - Python (Selenium, Scikit-learn, Pandas, Plotly)
 - Power BI
-
----
-
