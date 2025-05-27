@@ -26,7 +26,7 @@ def predecir():
         'PUNTAJE': [int(request.form['PUNTAJE'])],
         'SEDE': [request.form['SEDE']],
         'PERIODO': [request.form['PERIODO']],
-        'Nº POSTULACION': [int(request.form['Nº POSTULACION'])]
+        'Nº POSTULACION': [int(request.form['Nº POSTULACION'])],
         'SEXO': [request.form['SEXO']],
         'TIPO_COLEGIO': [request.form['TIPO_COLEGIO']],
     }
