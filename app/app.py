@@ -38,7 +38,7 @@ def predecir():
 
     resultado = "INGRESAS" if pred == 1 else "NO INGRESAS"
 
-    return render_template("resultado.html", resultado=resultado, confianza=confianza)
+    return render_template("resultado.html", resultado=resultado)
 
 if __name__ == '__main__':
     import os
