@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Cargar modelo entrenado
-modelo = joblib.load('mejor_modelo_entrenado.pkl')
+modelo = joblib.load('modelo_entrenado.pkl')
 
 # Leer carreras desde archivo txt
 with open('carreras.txt', encoding='utf-8') as f:
