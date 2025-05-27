@@ -35,10 +35,8 @@ def predecir():
 
     # Hacer predicción
     pred = modelo.predict(df)[0]
-    proba = modelo.predict_proba(df)[0].max()
 
     resultado = "INGRESAS" if pred == 1 else "NO INGRESAS"
-    confianza = round(proba * 100, 2)
 
     return render_template("resultado.html", resultado=resultado, confianza=confianza)
 
