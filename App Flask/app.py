@@ -1,47 +1,48 @@
-# app.py
-pip install Flask
-from flask import Flask, render_template, request
-import joblib
+from flask import Flask, request, render_template
 import pandas as pd
+import joblib
+import os
 
 app = Flask(__name__)
 
-# Cargar modelo y preprocesador
-modelo = joblib.load('modelo_entrenado.pkl')
-preprocesador = joblib.load('preprocesador.pkl')
+# Cargar modelo entrenado
+modelo = joblib.load('mejor_modelo_entrenado.pkl')
+
+# Leer carreras desde archivo txt
+with open('carreras.txt', encoding='utf-8') as f:
+    carreras = sorted([line.strip().upper() for line in f if line.strip()])
 
 @app.route('/')
 def index():
-    return render_template('formulario.html')
+    return render_template('formulario.html', carreras=carreras)
 
-@app.route('/predict', methods=['POST'])
-def predict():
+@app.route('/predecir', methods=['POST'])
+def predecir():
     # Obtener datos del formulario
-    puntaje = float(request.form['puntaje'])
-    postulacion = int(request.form['postulacion'])
-    carrera = request.form['carrera']
-    sede = request.form['sede']
-    periodo = request.form['periodo']
-    sexo = request.form['sexo']
-    tipo_colegio = request.form['tipo_colegio']
+    carrera = request.form['CARRERA'].upper()
 
-    # Crear DataFrame para predecir
-    data = pd.DataFrame([{
-        'PUNTAJE': puntaje,
-        'Nº POSTULACION': postulacion,
-        'CARRERA': carrera,
-        'SEDE': sede,
-        'PERIODO': periodo,
-        'SEXO': sexo,
-        'TIPO_COLEGIO': tipo_colegio
-    }])
+    datos = {
+        'CARRERA': [carrera],
+        'SEXO': [request.form['SEXO']],
+        'TIPO_COLEGIO': [request.form['TIPO_COLEGIO']],
+        'SEDE': [request.form['SEDE']],
+        'PERIODO': [request.form['PERIODO']],
+        'PUNTAJE': [int(request.form['PUNTAJE'])],
+        'EDAD': [int(request.form['EDAD'])],
+        'NRO_POSTULACION': [int(request.form['NRO_POSTULACION'])]
+    }
 
-    # Preprocesar y predecir
-    X = preprocesador.transform(data)
-    prediccion = modelo.predict(X)[0]
+    df = pd.DataFrame(datos)
 
-    resultado = '✅ Ingresó' if prediccion == 1 else '❌ No ingresó'
-    return render_template('resultado.html', resultado=resultado)
+    # Hacer predicción
+    pred = modelo.predict(df)[0]
+    proba = modelo.predict_proba(df)[0].max()
+
+    resultado = "INGRESAS" if pred == 1 else "NO INGRESAS"
+    confianza = round(proba * 100, 2)
+
+    return render_template("resultado.html", resultado=resultado, confianza=confianza)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
