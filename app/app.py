@@ -44,5 +44,6 @@ def predecir():
     return render_template("resultado.html", resultado=resultado, confianza=confianza)
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
+    import os
+    port = int(os.environ.get('PORT', 10000))  # usar el puerto de Render si está disponible
     app.run(host='0.0.0.0', port=port)
