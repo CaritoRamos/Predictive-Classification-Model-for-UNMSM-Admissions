@@ -23,13 +23,12 @@ def predecir():
 
     datos = {
         'CARRERA': [carrera],
-        'SEXO': [request.form['SEXO']],
-        'TIPO_COLEGIO': [request.form['TIPO_COLEGIO']],
+        'PUNTAJE': [int(request.form['PUNTAJE'])],
         'SEDE': [request.form['SEDE']],
         'PERIODO': [request.form['PERIODO']],
-        'PUNTAJE': [int(request.form['PUNTAJE'])],
-        'EDAD': [int(request.form['EDAD'])],
-        'NRO_POSTULACION': [int(request.form['NRO_POSTULACION'])]
+        'Nº POSTULACION': [int(request.form['Nº POSTULACION'])]
+        'SEXO': [request.form['SEXO']],
+        'TIPO_COLEGIO': [request.form['TIPO_COLEGIO']],
     }
 
     df = pd.DataFrame(datos)
