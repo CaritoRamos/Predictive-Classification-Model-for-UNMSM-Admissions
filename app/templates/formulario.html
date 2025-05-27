@@ -78,17 +78,8 @@
                 {% endfor %}
             </select>
 
-            <label for="SEXO">Sexo:</label>
-            <select name="SEXO" id="SEXO">
-                <option value="M">Masculino</option>
-                <option value="F">Femenino</option>
-            </select>
-
-            <label for="TIPO_COLEGIO">Tipo de Colegio:</label>
-            <select name="TIPO_COLEGIO" id="TIPO_COLEGIO">
-                <option value="NACIONAL">Nacional</option>
-                <option value="PRIVADO">Privado</option>
-            </select>
+            <label for="PUNTAJE">Puntaje:</label>
+            <input type="number" name="PUNTAJE" required>
 
             <label for="SEDE">Sede:</label>
             <select name="SEDE" id="SEDE">
@@ -109,14 +100,23 @@
                 <option value="II">II</option>
             </select>
 
-            <label for="PUNTAJE">Puntaje:</label>
-            <input type="number" name="PUNTAJE" required>
+            <label for="Nº POSTULACION">Número de Postulación:</label>
+            <input type="number" name="Nº POSTULACION" required>
+
+            <label for="SEXO">Sexo:</label>
+            <select name="SEXO" id="SEXO">
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            </select>
 
             <label for="EDAD">Edad:</label>
             <input type="number" name="EDAD" required>
 
-            <label for="NRO_POSTULACION">Número de Postulación:</label>
-            <input type="number" name="NRO_POSTULACION" required>
+            <label for="TIPO_COLEGIO">Tipo de Colegio:</label>
+            <select name="TIPO_COLEGIO" id="TIPO_COLEGIO">
+                <option value="NACIONAL">Nacional</option>
+                <option value="PRIVADO">Privado</option>
+            </select>
 
             <input type="submit" value="Predecir">
         </form>
