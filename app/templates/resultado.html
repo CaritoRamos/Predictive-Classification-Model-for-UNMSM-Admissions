@@ -27,19 +27,14 @@
         }
 
         h2 {
-            font-size: 28px;
+            font-size: 26px;
             color: #333;
+            margin-top: 20px;
         }
 
         .icon {
-            width: 100px;
+            width: 90px;
             margin-bottom: 20px;
-        }
-
-        .confidence {
-            font-size: 18px;
-            color: #555;
-            margin-top: 10px;
         }
 
         button {
@@ -62,11 +57,12 @@
     <div class="result-container">
         {% if resultado == "INGRESAS" %}
             <img class="icon" src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="Ingresas">
+            <h2>¡Ingresas a la UNMSM!</h2>
         {% else %}
             <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" alt="No Ingresas">
+            <h2>No ingresas</h2>
         {% endif %}
 
-        <h2>Resultado: {{ resultado }}</h2>
         <form action="/" method="get">
             <button type="submit">Volver a predecir</button>
         </form>
