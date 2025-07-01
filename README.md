@@ -7,8 +7,7 @@ This project is a continuation of an initial analysis on a specific university e
 In this second phase, the goal was to build a predictive and descriptive analysis using historical data from admission processes, 
 applying data collection, processing, and visualization techniques.
 
-In addition, a predictive classification model was developed to estimate whether a candidate will be admitted or not to the university, 
-based on variables such as the academic program (major) and the admission period.
+n addition, a predictive classification model was developed to estimate whether a candidate will be admitted or not to the university, based on variables such as the academic program (major) and the admission period. The model achieved a validation accuracy of 96.51%, demonstrating strong performance and reliability for real-world application.
 
 ## 🧠 Project Structure
 
